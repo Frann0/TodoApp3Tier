@@ -64,10 +64,7 @@ public class TaskOverviewController implements Initializable {
         try {
             taskManager.add(new Task(description));
         } catch (JAXBException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("An error occurred");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            showError(e);
         }
     }
 
@@ -81,10 +78,7 @@ public class TaskOverviewController implements Initializable {
         try {
             taskManager.postpone(selectedTask,1);
         } catch (JAXBException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("An error occurred");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            showError(e);
         }
     }
 
@@ -98,10 +92,7 @@ public class TaskOverviewController implements Initializable {
         try {
             taskManager.postpone(selectedTask,30);
         } catch (JAXBException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("An error occurred");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            showError(e);
         }
     }
 
@@ -114,10 +105,7 @@ public class TaskOverviewController implements Initializable {
         try {
             taskManager.complete(selectedTask);
         } catch (JAXBException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("An error occurred");
-            alert.setContentText(e.getMessage());
-            alert.showAndWait();
+            showError(e);
         }
     }
 
